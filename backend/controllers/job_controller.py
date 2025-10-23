@@ -156,7 +156,7 @@ def bulk_insert_jobs():
             tags = clean_text(job_data.get("tags", ""))
             posting_raw = job_data.get("posting_date", "")
 
-            # 🕒 Parse posting_date like '10h ago', '12d ago', etc.
+            # Parse posting_date like '10h ago', '12d ago', etc.
             posting_date = parse_posting_date(posting_raw)
             existing = Job.query.filter_by(title=title, company=company).first()
             if existing:

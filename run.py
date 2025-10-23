@@ -17,7 +17,7 @@ def create_virtualenv():
         print("🔧 Creating virtual environment...")
         venv.create(VENV_DIR, with_pip=True)
     else:
-        print("✅ Virtual environment already exists.")
+        print("Virtual environment already exists.")
 
 def get_python_exec():
     """Get the path to the Python executable inside the venv."""
@@ -28,17 +28,17 @@ def get_python_exec():
 
 def install_requirements(python_exec):
     """Install required packages."""
-    print("📦 Installing dependencies...")
+    print("Installing dependencies...")
     subprocess.run([python_exec, "-m", "pip", "install", "--upgrade", "pip"])
     subprocess.run([python_exec, "-m", "pip", "install", "-r", REQUIREMENTS_FILE])
 
 def run_backend_and_scraper(python_exec):
     """Run backend first, then scraper, both concurrently."""
-    print("🚀 Starting Flask backend...")
+    print("Starting Flask backend...")
     backend_process = subprocess.Popen([python_exec, BACKEND_PATH])
 
     # Wait a few seconds for backend to start
-    print("⏳ Waiting for backend to initialize...")
+    print("Waiting for backend to initialize...")
     time.sleep(5)
 
     print("🕷️ Starting scraper...")
@@ -48,7 +48,7 @@ def run_backend_and_scraper(python_exec):
         backend_process.wait()
         scraper_process.wait()
     except KeyboardInterrupt:
-        print("\n🛑 Stopping both processes...")
+        print("\nStopping both processes...")
         backend_process.terminate()
         scraper_process.terminate()
 
