@@ -1,5 +1,10 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+backend/__pycache__
+backend/controllers/__pycache__
+backend/models/__pycache__
+backend/routes/__pycache__
+
 *.py[codz]
 *$py.class
 
@@ -143,6 +148,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+backend/.env
 
 # Spyder project settings
 .spyderproject
@@ -205,3 +211,6 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+
