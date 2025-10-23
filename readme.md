@@ -21,17 +21,17 @@ To build a job board that automatically scrapes actuarial job data from a public
 
 ## 🏗️ Project Structure
 
-1. Backend (backend/)
+### 1. Backend (backend/)
 - Receives job data from scraper or frontend.
 - Stores jobs in the database (MySQL / SQLite) using SQLAlchemy.
 - Provides API endpoints (GET /api/getAllJobs, POST /api/createJob, POST /api/jobs/bulk, Delete /api/removeJob, put/patch /api/updateJob) for frontend and scraper.
 
-2. Scraper (scraper/scrape.py)
+### 2. Scraper (scraper/scrape.py)
 - Uses Selenium to get job data (title, company, location, salary, tags, posting date) from ActuaryList.
 - Cleans and formats the data.
 - Sends JSON payload to backend API (/api/jobs/bulk) via HTTP POST.
 
-3. Frontend (frontend/)
+### 3. Frontend (frontend/)
 - Fetches job data from backend API (GET /api/getAllJobs).
 - Displays job listings in cards with filters, tags, and other info.
 - Users interact with UI; frontend requests backend for data dynamically.
