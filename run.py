@@ -14,7 +14,7 @@ SCRAPER_PATH = os.path.join(ROOT_DIR, "scraper", "scrape.py")
 def create_virtualenv():
     """Create a virtual environment if it doesn't exist."""
     if not os.path.exists(VENV_DIR):
-        print("🔧 Creating virtual environment...")
+        print(" Creating virtual environment...")
         venv.create(VENV_DIR, with_pip=True)
     else:
         print("Virtual environment already exists.")
